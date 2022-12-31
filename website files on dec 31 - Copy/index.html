@@ -1,0 +1,1172 @@
+<html lang="en">
+
+<head>
+    <title>AP Calc BC Calculators</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="mathquill1.css" />
+    <script src="jquery.min.js"></script>
+    <script src="mathquill.js"></script>
+    <script src="all.min.js"></script>
+    <link rel="stylesheet" href="styles1.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2217XHPFJ8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2217XHPFJ8');
+</script>
+
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_deriv');">Derivatives</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_integrals');">Integrals</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_sum');">Summation</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_limits');">Limits</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_curve');">Arclength</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_parametric');">Parametrics</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_euler');">Euler's Method</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_vectors');">Vectors</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_polar');">Polar</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_algebra')">Algebra</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-button" onclick="openPage('div_about')">About</button>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <main>
+            <div class="deriv column tabs__content" id="div_deriv" style="display:block;">
+                <h3>Derivatives </h3>
+
+                <div class="calculator">
+                    <div class="group">
+
+                        <div class="sameLine">
+                            <p>f(x)=</p>
+                            <span id="userInput"> </span>
+
+                        </div>
+                        <button class='bn54' onclick="derivative()">
+                            <span class='bn54span'>Solve</span>
+                        </button>
+                        <div class="sameLine1">
+                            <p>Answer: </p>
+                            <p id="derivative"></p>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <p class="header">At a point:</p>
+                        <div class="sameLine">
+                            <p>f(x)= </p>
+                            <span id="inputDerivativePoint"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>x=</p>
+                            <span id="inputDerivPoint"></span>
+                        </div>
+                        <button class="bn54" onclick="derivativePoint()">
+                            <span class="bn54span">
+                                Solve</span>
+                        </button>
+                        <div class="sameLine1">
+                            <p>Answer: </p>
+                            <p id="answerDerivPt"></p>
+                        </div>
+                        <div class="sameLine1">
+                            <p>Answer(dec): </p>
+                            <p id="answerDerivPtNum"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This derivative calculator attempts to calculate the derivative
+                            of a function with respect to x.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is a derivative?</p>
+                        <p class="text">
+                            A function's derivative is an equation for the <b>slope</b> of that function at any point.
+                            <br>
+                            If you want to find the slope of a function at a certain <b>point</b>, you can <b>derive
+                            </b> the
+                            function and <b>plug in</b> the certain point's x value into the derivative for x. The y
+                            value it
+                            produces will
+                            be the slope at that point.
+                        </p>
+                    </div>
+                    <div class="group commonDerivativesDiv">
+                        <p class="header">Common Derivatives</p>
+                        <p id="sin"></p> <br>
+                        <p id="cos"></p> <br>
+                        <p id="tan"></p> <br>
+                        <p id="csc"></p> <br>
+                        <p id="sec"></p> <br>
+                        <p id="cot"></p> <br>
+                        <p id="ex"></p> <br>
+                        <p id="lnx"></p>
+                    </div>
+                    <div class="group derivativeRulesDiv">
+                        <p class="header">Derivative Rules</p>
+                        <p>Power Rule:</p>
+                        <p id="powerRule"></p> <br> <br>
+                        <p>Product Rule:</p>
+                        <p id="productRule"></p> <br> <br>
+                        <p>Quotient Rule:</p>
+                        <p id="quotientRule"></p> <br> <br>
+                        <p>Chain Rule:</p>
+                        <p id="chainRule"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="integrals column tabs__content" id="div_integrals" style="display:none;">
+                <h3>Integrals</h3>
+                <div class="calculator">
+                    <div class="group">
+                        <div class="sameLine">
+
+                            <p>f(x)=</p>
+                            <span id="inputIntegral"></span>
+                        </div>
+
+                        <button class="bn54" onclick="integrate()"><span class="bn54span">
+                                Solve</span></button>
+                        <div class="sameLine1">
+                            <p>Answer: </p>
+                            <p id="answerIntegral"></p>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <p class="header">Definite:</p>
+                        <div class="sameLine">
+                            <p>f(x)=</p>
+                            <span id="inputDefIntegral"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Lower Bound: </p>
+                            <span id="inputDefIntegralFrom"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Upper Bound: </p>
+                            <span id="inputDefIntegralTo"></span>
+                        </div>
+                        <button class="bn54" onclick="defIntegrate()"><span class="bn54span">
+                                Solve</span></button>
+                        <div class="sameLine1">
+                            <p>Answer: </p>
+                            <p id="answerDefIntegral"></p>
+                        </div>
+                        <div class="sameLine1">
+                            <p>Answer(dec): </p>
+                            <p id="answerDefIntegralDec"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This integral calculator attempts to calculate the antiderivative and definite integral
+                            of a function with respect to x.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared0"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is an integral?</p>
+                        <p>An <b>indefinite</b> integral (antiderivative) is an equation
+                            received after applying derivative rules but <b>reversed</b>.
+                            <br>
+                            An indefinite integral is notated as a <b>capital</b> letter (e.g. F(x)
+                            is the indefinite integral of f(x), which means f(x) is the derivative of F(x)).
+                            <br>
+                            Not all functions have an indefinite
+                            integral. <br>
+                            A <b>definite </b> integral is a number representing the <b>area</b>
+                            between a line and the x axis (area under a curve). This value
+                            can be negative.
+                        </p>
+                    </div>
+                    <div class="group fundamentalTheoremOfCalcDiv">
+                        <p class="header">The Fundamental Theorem of Calculus</p>
+                        <p>Essentially, the value of a definite integral is the difference
+                            of the antiderivative evaluated at each endpoint.
+                        </p>
+                        <!-- <p id="fundamentalTheoremOfCalculus"></p> -->
+                        <div class="sameLine">
+                            <div class="neg-pad">
+                                <p id="fundamentalTheoremLatexIntegral"></p>
+                            </div>
+                            <div class="vert">
+                                <p class="smalltext" id="int-top1">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="fundamentalLatex"></p>
+                        </div>
+                    </div>
+                    <div class="group commonIntegrals">
+                        <p class="header">Common Integrals</p>
+                        <p id="xndx"></p> <br>
+                        <p id="1overX"></p> <br>
+                        <p id="dx"></p> <br>
+                        <p id="exInt"></p> <br>
+                        <p id="intSin"></p> <br>
+                        <p id="intCos"></p> <br>
+                        <p id="intSec2"></p> <br>
+                        <p id="intcsccot"></p> <br>
+                        <p id="intsectan"></p> <br>
+                        <p id="intnegcsc2"></p>
+
+                    </div>
+                    <div class="group">
+                        <p class="header">Common Integration Methods</p>
+
+                        <p><a href="https://tutorial.math.lamar.edu/classes/calcii/integrationbyparts.aspx"
+                                target="_blank">Integration by Parts</a></p>
+                        <div class="example">
+                            <p id="byParts" style="display:none;"></p> <br>
+                        </div>
+                        <p><a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-12/v/integration-with-partial-fractions"
+                                target="_blank">Integration by Partial Fractions</a></p>
+                        <div class="example" style="display:none;">
+                            <p class="smalltext">e.g.</p> <br>
+                            <p id="partialFrac0"></p> <br>
+                            <p id="partialFrac1"></p> <br>
+                            <p id="partialFrac2"></p> <br>
+                            <p id="partialFrac3"></p> <br>
+                            <p id="partialFrac4"></p>
+                        </div> <br>
+                        <p><a href="https://www.mathsisfun.com/calculus/integration-by-substitution.html"
+                                target="_blank">Integration by Substitution</a></p>
+                        <div class="example" style="display:none;">
+                            <p class="smalltext">e.g.</p>
+                            <p id="intSubEx0"></p>
+                            <div class="sameLine">
+                                <p id="intSubEx1"></p>
+                                <p id="xSquare">x^2</p>
+                                <p>, derive equation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="header"></p>
+            </div>
+            <div class="summation column tabs__content" id="div_sum" style="display:none;">
+                <h3>Summation</h3>
+                <div class="calculator">
+                    <div class="group">
+
+                        <div class="sameLine">
+                            <p>f(n)=</p>
+                            <span id="inputFunc"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Beginning: </p>
+                            <span id="inputLower"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>End:</p>
+                            <span id="inputUpper"></span>
+                        </div>
+                        <button class="bn54" onclick="summation()"><span class="bn54span">
+                                Solve</span></button><br>
+                        <div class="sameLine1">
+                            <p>Answer: </p>
+                            <p id="answerSummationFrac"></p>
+                        </div>
+                        <div class="sameLine1">
+                            <p>Answer(dec): </p>
+                            <p id="answerSummationDec"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This summation calculator attempts to calculate the sum
+                            of a series with respect to n.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared1"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is summation?</p>
+                        <p>Essentially, summation notation is a representation of a sum of a list.
+                        <p id="summationSign"></p>
+                        </p>
+                        <p>Plug in a for f(n). Then (a+1) and (a+2) until you get to b.
+                            The sum of the values evaluated is the answer of the summation
+                            notation.
+                        </p> <br>
+                        <p>For example:</p>
+                        <p id="summationExample0"></p> <br>
+                        <p id="summationExample1"></p> <br>
+                        <p id="summationExample2"></p> <br>
+                        <p id="summationExample3"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="limits column tabs__content" id="div_limits" style="display:none;">
+                <h3>Limits</h3>
+                <div class="calculator">
+                    <div class="group">
+
+                        <div class="sameLine">
+                            <p>f(x)=</p>
+                            <span id="limitAtFunction"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>x= </p>
+                            <span id="limitAtFunctionPoint"></span>
+                        </div>
+                        <button class="bn54" onclick="limitAt()"><span class="bn54span">
+                                Solve</span></button>
+                        <div class="sameLine1">
+                            <p>Answer:</p>
+                            <p id="answerLimit"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This limit calculator attempts to calculate the limit
+                            of a function at a certain point with respect to x.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared2"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is a limit?</p>
+                        <p>A limit is defined as the value that f(x) <b>approaches</b>
+                            as the input values approach a.
+                        </p>
+                        <p id="limitLatex"></p>
+                        <p>A limit only exists when the limit from the left and limit
+                            from the right are <b>equal</b>.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <p class="header">Limit Rules</p> <br>
+                        <p id="limitAddLatex"></p> <br>
+                        <p id="limitSubLatex"></p> <br>
+                        <p id="limitMulLatex"></p> <br>
+                        <p id="limitDivLatex"></p> <br>
+                    </div>
+                    <div class="group">
+                        <p class="header">How to Solve a Limit</p>
+                        <p>Try direct <b>substitution</b>.</p>
+                        <p>&nbsp&nbsp If the answer is <b>defined</b>, the evaluation is the limit. </p>
+                        <p>&nbsp&nbsp If the answer is <b>zero divided by zero</b>, rewrite the limit. Try <a
+                                href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limit-example-1?modal=1">factoring</a>
+                            ,
+                            <a
+                                href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing?modal=1">conjugates</a>
+                            , or
+                            <a
+                                href="https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/trig-limit-using-pythagorean-identity?modal=1">trig
+                                identities</a>
+                            . Then try direct substitution again.
+                        </p>
+                        <p>&nbsp&nbsp If the answer is some <b>number divided by zero</b>, you probably have an
+                            asymptote.
+                            Graph or plug in numbers from the left or right to see if the limit is positive or negative
+                            infinity.
+                        </p>
+                        <p>&nbsp&nbsp If the evaluation is still <b>zero</b> divided by zero after rewriting, try
+                            graphing and
+                            tables to
+                            approximate the limit.
+                        </p>
+                    </div>
+                    <p></p>
+                    <p class="header">Example:</p>
+                    <div class="group">
+                        <div class="sameLine">
+                            <p id="limitExample0"></p>
+                        </div>
+                        <p>x-y pairs as x approaches 1 from the <b>left</b>:</p> <br>
+                        <p id="a1">0.9 , 1.9</p>
+                        <p>0.99 , 1.99</p>
+                        <p>0.999 , 1.999</p>
+                        <br>
+                        <p>x-y pairs as x approaches 1 from the <b>right</b>:</p> <br>
+                        <p>1.001 , 2.001</p>
+                        <p>1.01 , 2.01</p>
+                        <p>1.1 , 2.1</p>
+                        <br>
+                        <p>From the left, as x approaches 1, f(x) approaches 2.</p>
+                        <p>From the right, as x approaches 1, f(x) also approaches 2.</p>
+                        <p>Since these are <b>equal</b>, the answer to the limit is <b>2</b> even though
+                            the function is <b>undefined</b> at 2.</p>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="curve column tabs__content" id="div_curve" style="display:none;">
+                <div class="calculator">
+                    <div class="group ">
+                        <h3>Length of Curve</h3>
+                        <p>Function:</p>
+                        <div class="sameLine">
+                            <p>f(x)=</p>
+                            <span id="curveFunctionInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Start:</p>
+                            <span id="curveStartInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>End:</p>
+                            <span id="curveEndInput"></span>
+                        </div>
+                        <button class="bn54" onclick="curve()">
+                            <span class="bn54span">Solve</span>
+                        </button>
+                        <p>Answer:</p>
+                        <p id="curveAnswer"></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This arclength calculator attempts to calculate the arclength
+                            of a function from start to end with respect to x.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared3"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">Formula</p> <br>
+
+                        <div class="sameLine">
+                            <div class="neg-pad">
+                                <p id="curveLengthLatexIntegral"></p>
+                            </div>
+                            <div class="vert">
+                                <p class="smalltext" id="int-top">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="sqrtHtml">&#8730;</p>
+                            <div class="bordertop">
+                                <p id="radicalsLatex"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="parametric column tabs__content" id="div_parametric" style="display:none;">
+                <h3>Parametric Equations</h3>
+                <div class="calculator">
+                    <div class="group">
+                        <p>Functions:</p>
+                        <div class="sameLine">
+                            <p>x(t)=</p>
+                            <span id="parametricInputx"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>y(t)=</p>
+                            <span id="parametricInputy"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="parametricFirstDerivative()" style="width:150px;">
+                                <span class="bn54span">First Derivative</span>
+                            </button>
+                            <button class="bn54" onclick="parametricSecondDerivative()" style="width:150px;">
+                                <span class="bn54span">Second Derivative</span>
+                            </button>
+                        </div>
+                        <p>Answer: </p>
+                        <div class="sameLine">
+                            <p id="deriv1" style="display:none">First Derivative: </p>
+                            <br>
+                            <p id="parametricAnswer"></p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="deriv2" style="display:none">Second Derivative:</p>
+                            <br>
+                            <p id="parametricAnswer2"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p>At a point:</p>
+                        <div class="sameLine">
+                            <p>t=</p>
+                            <span id="parametricInputPtt"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="parametricFirstDerivativePt()" style="width:150px;">
+                                <span class="bn54span">First Derivative</span>
+                            </button>
+                            <button class="bn54" onclick="parametricSecondDerivativePt()" style="width:150px;">
+                                <span class="bn54span">Second Derivative</span>
+                            </button>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt1" style="display:none">First Derivative: </p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt1ans" style="display:none">Answer:</p>
+                            <p id="parametricAnswerPt"></p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt1dec" style="display:none">Answer(dec):</p>
+                            <p id="parametricAnswerPtDec"></p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt2" style="display:none">Second Derivative:</p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt2ans" style="display:none">Answer:</p>
+                            <p id="parametricAnswerPt1"></p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="derivpt2dec" style="display:none">Answer(dec):</p>
+                            <p id="parametricAnswerPt1Dec"></p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This parametric calculator attempts to calculate the first and second derivatives
+                            of a parametric function with respect to t.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared4"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What are parametric equations?</p>
+                        <p>Parametric equations are functions <b>linked</b> by a common independent variable.
+                        </p>
+                        <p>Usually, parametric equations will have an <i>x</i> <b>and</b> <i>y</i> equation linked with
+                            a
+                            <i>t</i>&nbsp; variable (time).
+                        </p>
+                        <p>As <i>t</i> &nbsp;varies over a certain range, the equations will produce x-y pairs.</p>
+                        <p>Parametric equations are convenient for graphing curves.</p>
+                    </div>
+                    <div class="group">
+                        <p class="header">First Derivative Formula</p>
+                        <p id="parametricDeriv1Latex"></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Second Derivative Formula</p>
+                        <p id="parametricDeriv2Latex"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="euler column tabs__content" id="div_euler" style="display:none;">
+                <h3>Euler's Method</h3>
+                <div class="calculator">
+                    <div class="group">
+                        <div class="sameLine">
+                            <p>f'(x)=</p>
+                            <span id="eulerDerivativeInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Step size:</p>
+                            <span id="eulerStepSizeInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Beginning:</p>
+                            <span id="eulerBeginningInput"></span>
+                            <p>,</p>
+                            <span id="eulerBeginningInputy"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>End:</p>
+                            <span id="eulerEndInput"></span>
+                        </div>
+                        <button class="bn54" onclick="euler()">
+                            <span class="bn54span">Solve</span>
+                        </button>
+                        <p>Answer(dec):</p>
+                        <p id="eulerAnswerDec"></p>
+                        <p>Answer:</p>
+                        <p id="eulerAnswer"></p>
+                        <p>Table:</p>
+                        <p id="eulerTableAnswer"></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This Euler's method calculator attempts to estimate the answer of a function
+                            given the derivative with respect to x, a starting point, step size, and end.
+
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared5"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is Euler's Method?</p>
+                        <p>Euler's method is a technique used for <b>approximation</b> using
+                            multiple tangent lines.
+                        </p>
+                        <p>Essentially, the logic behind this is that if the first point
+                            and derivative is given, one can repeatedly draw <b>tangent</b> lines
+                            over some distance to get an approximation of a y value.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Euler's Method Formula</p>
+                        <p id="eulerFormulaLatex"></p> <br>
+                        <div class="sameLine">
+                            <p id="yn"></p>
+                            <p>is the current Y value</p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="ynminus1"></p>
+                            <p>is the previous Y value</p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="hlatex">h</p>
+                            <p> is the step size</p>
+                        </div>
+                        <div class="sameLine">
+                            <p id="previousSlope"></p>
+                            <p> is the slope at the prior point</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">Example</p>
+                        <div class="sameLine">
+                            <p>Let's estimate </p>
+                            <p id="eulerFunctionExample"></p>
+                            <p>at x=1 with a stepsize of 0.5 from (0,0) </p>
+                        </div>
+                        <div class="sameLine">
+
+                            <p>The derivative of </p>
+                            <p id="eulerFunctionExample1"></p>
+                            <p> is </p>
+                            <p id="eulerFunctionDeriv"></p>
+                            <p>.</p>
+
+                        </div>
+                        <p>Thus, at (0,0), the slope is 0.
+                        </p>
+                        <p> The estimation for the
+                            y value at x=0.5 will also be <b>0</b> because according to
+                            Euler's formula, previous y value(0) + step size(0.5) times
+                            slope at previous point(0) is 0. The <b>slope</b> at x=0.5 is
+                            1 because the derivative is 2x and 2 times 0.5 is 1.
+                        </p>
+                        <p> Thus, the estimation for the y value at x=1 will be 0.5 because
+                            at the previous point, y was zero and the slope was 1. According to
+                            Euler's formula, 0 + 0.5(1) = 0.5
+                        </p>
+                        <p>This can be easier visualized with a <b>table</b>: </p>
+                        <p></p>
+                        <table>
+                            <tr>
+                                <th>
+                                    <p>x</p>
+                                </th>
+                                <th>
+                                    <p>y</p>
+                                </th>
+                                <th>
+                                    <p>slope</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0.5</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0.5</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="vectors column tabs__content" id="div_vectors" style="display:none;">
+                <h3>Vectors</h3>
+                <div class="calculator">
+                    <div class="group">
+                        <div class="sameLine">
+                            <p>x(t)=</p>
+                            <span id="vectorXInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>y(t)=</p>
+                            <span id="vectorYInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="vectorFirstDerivative()" style="width:150px;">
+                                <span class="bn54span">First Derivative</span>
+                            </button>
+                            <button class="bn54" onclick="vectorSecondDerivative()" style="width:150px;">
+                                <span class="bn54span">Second Derivative</span>
+                            </button>
+                        </div>
+                        <p>Answer:</p>
+                        <p id="vectorFirstDerivativeAnswer0" style="display:none;">First Derivative:</p>
+                        <p id="vectorFirstDerivativeAnswer" style="display:none;"></p>
+                        <p id="vectorSecondDerivativeAnswerText" style="display:none">Second Derivative:</p>
+                        <p id="vectorSecondDerivativeAnswer" style="display:none"></p>
+                    </div>
+
+
+                    <div class="group">
+                        <p>Distance/Displacement:</p>
+                        <div class="sameLine">
+                            <p>Start: t=</p>
+                            <span id="vectorCurveStartInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>End: t=</p>
+                            <span id="vectorCurveEndInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="vectorCurve()">
+                                <span class="bn54span">Distance</span>
+                            </button>
+                            <button class="bn54" onclick="vectorDisplacement()" style="width:120px;">
+                                <span class="bn54span">Displacement</span>
+                            </button>
+                        </div>
+                        <p>Answer:</p>
+                        <p id="vectorCurveAnswer"></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This vector calculator attempts to calculate the first and second derivatives of
+                            a vector function. It can also calculate the distance and displacement of a
+                            vector function.
+                        </p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared6"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What are vectors?</p>
+                        <p>Vectors are ordered pairs of real numbers (like parametric equations)
+                            containing a direction <b>and</b> magnitude.
+                        </p>
+                        <p>
+                            They are represented in <b>component form</b> as &lt;a,b&gt;
+                        </p>
+                        <p>Vectors are represented by an <b>arrow</b> from the origin
+                            to the point.
+                        </p>
+                        <p>The <b>magnitude</b> is represented by the length of the arrow
+                            (use Pythagoream's Theorem).
+                        </p>
+                        <p>The <b>direction</b> is the smallest positive angle between the
+                            positive x-axis and the arrow representation.
+                        </p>
+                        <p></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">First Derivative</p>
+                        <p id="vectorDeriv1"></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Second Derivative</p>
+                        <p id="vectorDeriv2"></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Distance</p>
+                        <div class="sameLine">
+                            <div class="neg-pad">
+                                <p id="vectorDistanceIntegralLatex"></p>
+                            </div>
+                            <div class="vert">
+                                <p class="smalltext" id="int-top2">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="sqrtHtml1">&#8730;</p>
+                            <div class="bordertop">
+                                <p id="radicalsLatex1"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="group">
+                        <p class="header">Displacement</p>
+                        <div class="sameLine">
+                            <div class="neg-pad">
+                                <p id="vectorDisplacementIntegralLatex0"></p>
+                            </div>
+                            <div class="vert">
+                                <p class="smalltext" id="int-top3">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="ftdt"></p>
+                            <div class="neg-pad">
+                                <p id="vectorDisplacementIntegralLatex1"></p>
+                            </div>
+                            <div class="vert">
+                                <p class='smalltext' id="int-top4">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="gtdt"></p>
+                        </div>
+                      
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="polar column tabs__content" id="div_polar" style="display:none;">
+                <h3>Polar Equations (beta)</h3>
+                <div class="calculator">
+                    <div class="group">
+                        <p>Derivatives:</p>
+                        <div class="sameLine">
+                            <p>r=</p>
+                            <span id="polarFunctionInput"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="polarDerive()">
+                                <span class="bn54span">Derive</span>
+                            </button>
+
+                        </div>
+                        <p>Answer:</p>
+                        <p id="polarAnswer"></p>
+                    </div>
+                    <div class="group">
+                        <p>Definite Integrals:</p>
+                        <div class="sameLine">
+                            <p>Lower Bound:</p>
+                            <p id="thetaEquals"></p>
+                            <span id="polarLowerBound"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Upper Bound:</p>
+                            <p id="thetaEquals1"></p>
+                            <span id="polarUpperBound"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class=bn54 onclick="polarIntegrate()" style="width:105">
+                                <span class="bn54span">Integrate</span>
+                            </button>
+                        </div>
+                        <p>Answer:</p>
+
+                        <p id="polarIntegrateAns"></p>
+                        <p>Answer(dec):</p>
+                        <p id="polarIntegrateAnsDec"></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="group">
+                        <p class="header">Calculator Notation</p>
+                        <p>This polar calculator attempts to calculate the derivative and integral of a
+                            polar function with respect to theta. 
+                        </p>
+                        <div class="sameLine">
+                            <p>Type "theta" to input a </p>
+                            <p id="polarThetaLatex"></p>
+                            <p>.</p>
+                        </div>
+                        <p>All angles are interpreted as radians.</p>
+                        <p>Inverse trig should be typed like "arctan" (not "atan").</p>
+                        <div class="sameLine">
+                            <p>Exponents on trig functions should be typed after the last
+                                parentheses. For example:
+                            </p>
+                            <p id="cosineSquared7"></p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <p class="header">What is a polar equation?</p>
+                        <p>A polar curve consists of polar coordinates. </p>
+                        <div class="sameLine">
+                            <p>
+                                Each polar
+                                coordinate is defined as (r,
+                            </p>
+                            <p id="theta15"></p>
+                            <p>).</p>
+                        </div>
+                        <p>Polar equations are graphed on a <b>polar grid</b>, where
+                            r is the <b>distance</b> from the origin and theta is the <b>angle</b>
+                            starting from the positive x axis rotating counter clockwise.
+                        </p>
+                        <p>The general rule for converting to <b>Cartesian</b> is </p>
+                        <p id="rcostheta"></p> <br>
+                        <p id="rsintheta"></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Derivative</p>
+                        <p id="polarDerivLatex"></p>
+                    </div>
+                    <div class="group">
+                        <p class="header">Integral</p>
+                        <div class="sameLine">
+                            <p id="halfLatex"></p>
+                            <div class="neg-pad">
+                                <p id="polarLatexIntegral"></p>
+                            </div>
+                            <div class="vert">
+                                <p class="smalltext" id="int-top5">b</p>
+                                <p class="smalltext">a</p>
+                            </div>
+                            <p id="rsquareddtheta"></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="about column tabs__content" id="div_about" style="display:none;">
+                <h3>About</h3>
+                <div class="group">
+                    <p class="header">Purpose</p>
+                    <p>This website's purpose is to help AP Calc BC students study/learn
+                        the first few units.
+                    </p>
+                    <p>
+
+                        The website was designed with speed and convenience
+                        in mind (hence the lack of pictures and ads).
+                    </p>
+                    <p>As a former calc student myself, I wish you all the best of luck!</p>
+                </div>
+                <div class="group">
+                    <p class="header">About me (Logan)</p>
+                    <p>Hi! </p>
+                    <p>I'm a high school senior.</p>
+                    <p>My favorite animal is the goose and I'm nice at piano.</p>
+                </div>
+                <div class="group">
+                    <p class="header">Javascript Dependencies</p>
+                    <p><a href="http://mathquill.com/" target="_blank">Mathquill</a></p>
+                    <p><a href="https://nerdamer.com/documentation.html" target="_blank">Nerdamer</a></p>
+                    <p class="smalltext">Nerdamer | Version: 1.1.13 | Released: 2021/11/1 | License: "MIT License" | Authors: Martin Donk</p>
+                    <p><a href="https://jquery.com/" target="_blank">jQuery</a></p>
+                    <p><a></a></p>
+                </div>
+                <div class="group">
+                    <p class="header">Contact</p>
+                    <p>Feel free to send me an email on ideas for improvements or bugs! (maybe business too? :) )</p>
+                    <p>16etch@gmail.com</p>
+                </div>
+            </div>
+            <div class="algebra column tabs__content" id="div_algebra" style="display:none;">
+                <h3>Quick Algebra Tools</h3>
+                <div class=" poly">
+                    <h4>Rearrangement</h4>
+                    <div class="group">
+
+                        <div class="sameLine">
+                            <span id="inputExpandSimplify"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="expand()">
+                                <span class="bn54span">Expand</span>
+                            </button>
+                            <button class="bn54" onclick="simplify()">
+                                <span class="bn54span">Simplify</span>
+                            </button>
+                            <button class="bn54" onclick="factor()">
+                                <span class="bn54span">Factor</span>
+                            </button>
+                        </div>
+                        <div class="sameLine1">
+                            <p>Answer:</p>
+                            <p id="expandSimplifyAnswer"></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class=" operations">
+                    <h4>Operations</h4>
+                    <div class="group">
+                        <div class="sameLine">
+                            <span id="inputTop"></span>
+                        </div>
+                        <div class="sameLine">
+                            <span id="inputBottom"></span>
+                        </div>
+                        <div class="sameLine">
+                            <button class="bn54" onclick="add()"><span class="bn54span">Add</span></button>
+                            <button class="bn54" onclick="difference()"><span class="bn54span">Subtract</span></button>
+                            <button class="bn54" onclick="multiply()"><span class="bn54span">Multiply</span></button>
+                            <button class="bn54" onclick="divide()"><span class="bn54span">Divide</span></button>
+                        </div>
+                        <div class="sameLine1">
+                            <p>Answer:</p>
+                            <p id="operationsAnswer"></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class=" roots">
+                    <h4>Roots</h4>
+                    <div class="group">
+                        <div class="sameLine">
+                            <p>Function:</p>
+                            <span id="inputRoots"></span>
+                        </div>
+                        <button class="bn54" onclick="roots()">
+                            <span class="bn54span">Roots</span>
+                        </button>
+                        <div class='sameLine1'>
+                            <p>Answer:</p>
+                            <p id="rootsAnswer"></p>
+                        </div>
+                        <div class='sameLine1'>
+                            <p>Answer (dec):</p>
+                            <p id="rootsAnswerDec"></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class=" plugin">
+                    <h4>Plug In</h4>
+                    <div class="group">
+                        <div class="sameLine">
+                            <p>Equation:</p>
+                            <span id="pluginFunction"></span>
+                        </div>
+                        <div class="sameLine">
+                            <p>Substitutions (format example: y=7):</p>
+                            <span id="pluginVarInput"></span>
+                        </div>
+                        <button class="bn54" style="width:100px;" onclick="plugin()">
+                            <span class="bn54span">Evaluate</span>
+                        </button>
+                        <p>Answer:</p>
+                        <p id="pluginOutput"></p>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+
+        </main>
+
+
+
+
+    </div>
+</body>
+
+
+
+
+
+<!-- bugs:
+    make sure parametric 2nd derivatives are working. they output something different from other calculators but sometimes. are they
+    just equivalent? or did i fuck up? (unlikely lol)
+    ln bug: x turns into an asterisk in the subspace of log/ln
+    make sure factor works w/ removecdots
+    error messages for parseAnswer
+-->
+<!-- current objective:
+    to fix integrals: use myInt and add a div after it. the div will be a vertical flexbox
+    to fix sqrt: use sqrt from html, add a top margin to box with stuff inside it.
+-->
+
+<!-- finish integrals and sqrts on vectors page -->
+
+<!-- maybe remove asterisks from deriv.text() string before? kill two birds with one stone. fuck two bitches? maybe? -->
+
+
+<script src="main.js"></script>
+
+</html>

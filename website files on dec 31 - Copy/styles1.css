@@ -1,0 +1,484 @@
+:root {
+  font-size: 16px;
+  /*font sizes*/
+  --navwidth: 160px;
+  --fontColor:rgb(238, 155, 255);
+  --backgroundColor:rgb(13, 13, 13);
+  --fontColorOfPTags:rgb(206, 206, 206);
+  --h3AndCalculatorBackgroundColor:rgb(13, 13, 13);
+
+  color:white;
+  --buttonColorBackground: var(--backgroundColor);
+  --buttonColorBorder:var(--fontColorOfPTags);
+  --buttonColorText:var(--fontColorOfPTags);
+
+  --borderBetweenCalculatorAndExplanation:transparent;
+  --calculatorBackgroundColor:var(--h3AndCalculatorBackgroundColor);
+
+  --navbarBottom:rgb(0, 0, 0);
+  --navbarTop:rgb(0, 0, 0);
+
+  --navButtonColorText:rgb(175, 187, 255);
+  --navButtonTextColorWhenHovered:rgb(255, 255, 255);
+  --navButtonBackgroundColorWhenHovered:rgb(236, 140, 255);
+
+  --pageBackgroundColor:var(--backgroundColor);
+
+  --headingColorH3:rgb(192, 181, 255);
+  --headingColorHeader:#dfb0ffe3;
+
+  --linkWhenHovered:(rgb(5,6,2));
+
+  --h3BackgroundColor:var(--h3AndCalculatorBackgroundColor);
+}
+
+h3 {
+  font-family: 'Raleway';
+  font-size: 2.45em;
+  /*font sizes*/
+  font-weight: lighter;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  letter-spacing: 0.7px;
+  padding-bottom: 10px;
+  color:var(--headingColorH3);
+  background-color:var(--h3BackgroundColor);
+  /* border-top:5px;
+  border-bottom:1px;
+  border-left:10px;
+  border-color:var(--h3BackgroundColor); */
+}
+
+h4 {
+  font-family: 'Raleway';
+  font-size: 1.75em;
+  /*font sizes*/
+  font-weight: lighter;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  letter-spacing: 0.7px;
+  padding-bottom: 10px;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  /*font sizes*/
+  margin: 3px;
+  margin-left: 0px;
+  word-wrap: break-word;
+  color:var(--fontColorOfPTags);
+}
+
+button {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+
+}
+
+
+.bn54 {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 20px;
+  width: 85px;
+  opacity: 1;
+  background-color: var(--buttonColorBackground); /*white*/
+  border: 1px solid var(--buttonColorBorder);
+}
+
+.bn54 .bn54span {
+  font-family: sans-serif;
+  color: var(--buttonColorText);
+  font-size: 11px;
+  /*font sizes*/
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.bn54:hover {
+  animation: bn54rotate 0.7s ease-in-out both;
+}
+
+.bn54:hover .bn54span {
+  animation: bn54storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes bn54rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bn54storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+
+.sameLine {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+
+  margin-top: 2px;
+
+  align-items: center;
+  word-wrap: break-word;
+}
+
+
+.group {
+  padding-top: 2px;
+  padding-bottom: 15px;
+  word-wrap: break-word;
+  padding-left: 2px;
+  padding-right: 2px;
+
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.column {
+  /* width: 25%; */
+  word-wrap: break-word;
+  margin-right: 0px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  margin-top: 0px;
+  padding-left: 10px;
+  /* scrollbar-width: 0px; */
+
+}
+
+.column::-webkit-scrollbar {
+  width: 0px;
+  height: 2px;
+}
+
+
+.header {
+  font-family: 'Raleway';
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color:var(--headingColorHeader);
+}
+
+body {
+  height: 100%;
+  width: 99.6%;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  /* overflow-y:scroll; */
+}
+
+html {
+  overflow-y: hidden;
+  height: 100%;
+  width:100%;
+}
+
+
+
+
+
+.calculator {
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  border-color: var(--borderBetweenCalculatorAndExplanation); /*the border between the calculator and the explanation*/
+  background-color: var(--calculatorBackgroundColor);
+}
+
+
+
+.navbar {
+  position: fixed;
+  background: linear-gradient(to top, var(--navbarBottom), var(--navbarTop));
+  height: 100%;
+  width: var(--navwidth);
+  z-index:10;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items:center; */
+  height: 100%;
+  padding-top: 10px;
+}
+
+.nav-item {
+  width: 100%;
+  height: 40px;
+}
+
+.nav-button {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Open Sans';
+  padding: 0;
+  margin: 0;
+  border-color: transparent;
+  background-color: transparent;
+  border-width: 0px;
+  text-align: left;
+  padding-left: 7px;
+  transition: background-color 140ms ease-out 140ms;
+  color:var(--navButtonColorText);
+}
+
+/* .algebra-container{
+ 
+  display:flex;
+  height:100%;
+  transition:600ms;
+}
+
+.algebra-container:hover{
+  width:15rem;
+  z-index:5;
+  transition:600ms;
+}
+
+#leftbar{
+
+  background-color:blue;
+  color:red;
+  float:left;
+  padding:0px;
+  margin:0px;
+}
+
+.algebra-column{
+  
+  margin-left:5px;
+  display:none;
+}
+*/
+.container{
+  background-color:transparent;
+ /* 10 px left margin */
+} 
+
+/* aside{
+  flex:1;
+  
+  background-color:rgb(255, 214, 214);
+} */
+
+main {
+  margin-left: var(--navwidth);
+  flex:29;
+}
+
+
+.nav-button:hover {
+  filter: grayscale(0%) opacity(1);
+  transition: 600ms;
+  /* background: red; */
+  color: var(--navButtonTextColorWhenHovered);
+  background-color: var(--navButtonBackgroundColorWhenHovered);
+  /* background:linear-gradient(to top, rgb(230, 230, 255),rgb(224, 255, 224)); */
+}
+.deriv {
+  /* background-image: linear-gradient(to top right, rgb(235, 251, 255), rgb(255, 247, 238), white); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.integrals {
+  /* background-image: linear-gradient(to bottom left, rgb(237, 255, 255), rgb(243, 250, 243), rgb(255, 255, 255)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.summation {
+  /* background-image: linear-gradient(to bottom right, rgb(247, 250, 255), rgb(255, 247, 255), rgb(255, 255, 255)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.limits {
+  /* background-image: linear-gradient(to top right, rgb(253, 251, 241), rgb(246, 255, 244), rgb(255, 247, 240)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.curve {
+  /* background-image: linear-gradient(to top right, rgb(248, 255, 250), rgb(248, 249, 255), rgb(255, 251, 244)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.parametric {
+  /* background-image: linear-gradient(to bottom right, rgb(255, 250, 241), rgb(244, 250, 244), white); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.euler {
+  /* background-image: linear-gradient(to bottom right, rgb(247, 255, 247), rgb(242, 251, 255), white); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.vectors {
+  /* background-image: linear-gradient(to bottom right, rgb(238, 253, 255), rgb(254, 251, 255), white); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.polar {
+  /* background-image: linear-gradient(to bottom right, rgb(247, 255, 249), rgb(254, 254, 255), rgb(248, 248, 255)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.algebra{
+  /* background-image: linear-gradient(to bottom right, rgb(249, 255, 247),rgb(255, 245, 252)); */
+  background-color:var(--pageBackgroundColor);
+}
+
+.about {
+  /* background-image: linear-gradient(to bottom, rgb(250, 255, 251), rgb(238, 239, 255));; */
+  background-color:var(--pageBackgroundColor);
+}
+
+div::webkit-scrollbar {
+  /*scrollbar for content*/
+  width: 10px;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+a{
+  transition:600ms;
+}
+
+a:hover{
+  color: var(--linkWhenHovered);
+}
+
+table, th, td{
+  border: 1px solid;
+  border-collapse: collapse;
+  width:25%;
+}
+
+/* 
+  want an mq-supsub that is taller
+  maybe just add a new type of supsub
+*/
+
+.vert{
+  display:flexbox;
+  flex-direction:column;
+  height:4.8em;
+  padding-left:0px;
+  vertical-align: -1.1em;
+  padding-right: .2em;
+  margin-left:-9px;
+}
+
+.smalltext {
+  font-size: 0.8em;
+ 
+}
+
+#int-top{
+  margin-bottom:1.9em;
+}
+
+#int-top1{
+  margin-bottom:1.9em;
+}
+
+#int-top2{
+  margin-bottom:1.9em;
+}
+
+#int-top3{
+  margin-bottom:1.9em;
+}
+
+#int-top4{
+  margin-bottom:1.9em;
+}
+
+#int-top5{
+  margin-bottom:1.9em;
+}
+
+#sqrtHtml{
+  transform:scale(2.1);
+}
+
+#sqrtHtml1{
+  transform:scale(1.8);
+}
+
+#radicalsLatex{
+  border-top-width:1px;
+  border-top-color:black;
+}
+
+.bordertop{
+  border-top: 1px solid;
+}
+
+.neg-pad{
+  padding-right: 0.2em;
+}
